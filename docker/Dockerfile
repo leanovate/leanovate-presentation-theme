@@ -8,10 +8,11 @@ RUN apk add --update curl ca-certificates python ruby rsync && \
   (curl -L https://bootstrap.pypa.io/get-pip.py | python) && \
   rm /var/cache/apk/*
 
-COPY scripts/rsyncd.conf /etc/rsyncd.conf
-
 RUN pip install pygments
 RUN gem install asciidoctor --no-ri --no-rdoc
+
+COPY conf/rsyncd.conf /etc/rsyncd.conf
+COPY scripts/run.sh /run.sh
 
 VOLUME /project
 
@@ -19,4 +20,6 @@ WORKDIR /project
 
 EXPOSE 1313 873
 
-CMD ["hugo"]
+ENTRYPOINT ["/run.sh"]
+
+CMD []
