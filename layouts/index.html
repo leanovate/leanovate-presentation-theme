@@ -1,0 +1,11 @@
+{{ partial "header" }}
+
+<h2>Presentations</h2>
+
+<ul>
+    {{ range where .Site.Pages "Type" "presentation" }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+    {{ end }}
+<ul>
+
+{{ partial "footer" }}

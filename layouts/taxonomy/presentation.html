@@ -1,0 +1,10 @@
+
+{{ partial "header" }}
+
+<h1>{{ .Title }}</h1>
+
+{{ range .Data.Pages.ByWeight }}
+  {{ .Render "li" }}
+{{ end }}
+
+{{ partial "footer" }}

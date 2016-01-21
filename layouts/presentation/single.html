@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="{{ "/css/slidy.css" | relURL}}" />
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="{{ "/css/leanovate.css" | relURL}}" />
+<script src="{{ "/js/slidy.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
+<script src="{{ "/js/fit.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
+<script src="{{ "/js/glue.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
+<meta name="duration" content="{{ .Params.duration }}" />
+<meta name="copyright" content="{{ .Params.copyright }}" />
+</head>
+<body>
+<div class="background">
+    <div class="header"></div>
+</div>
+
+<div class="slide cover">
+    <h1>{{ .Title }}</h1>
+</div>
+
+{{ $name := .Params.presentation }}
+{{ $presentation := index .Site.Taxonomies.presentations $name }}
+
+{{ range $presentation.Pages.ByWeight }}
+   {{ .Render "presentation" }}
+{{ end }}

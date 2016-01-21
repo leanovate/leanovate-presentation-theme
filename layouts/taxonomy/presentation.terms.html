@@ -1,0 +1,10 @@
+{{ partial "header" }}
+
+<ul>
+{{ range $name, $taxonomy := .Data.Terms }}
+  <li><a href="{{ $name | urlize }}">{{ $name }}</a> </li>
+{{ end }}
+
+</ul>
+
+{{ partial "footer" }}

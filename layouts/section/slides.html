@@ -1,0 +1,7 @@
+lower
+
+{{ range .Data.Pages }}
+  <ul>
+    {{ .Render "li" }}
+  </ul>
+{{ end }}
