@@ -1,4 +1,8 @@
 <div class="center-box">
+{{ if isset .Params "rel"}}
+    <iframe src="{{ .Page.Dir }}{{ .Get "rel" }}">
+{{ else }}
     <iframe src="{{ .Get 0 }}">
+{{ end }}
     </iframe>
 </div>

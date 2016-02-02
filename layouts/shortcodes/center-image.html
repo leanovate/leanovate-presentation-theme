@@ -1,1 +1,5 @@
+{{ if isset .Params "rel"}}
+<img class="centered" src="{{ .Page.Dir }}{{ .Get "rel" }}"></img>
+{{ else }}
 <img class="centered" src="{{ .Get 0 }}"></img>
+{{ end }}
