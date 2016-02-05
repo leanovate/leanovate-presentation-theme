@@ -60,8 +60,13 @@ ul li {
   list-style: none;
 }
 
-ul li:before {
+li ul li:before {
     content: "\25A0  ";
+    color: rgb(0,149,216);
+}
+
+ul li:before {
+    content: "\25FC  ";
     color: rgb(0,149,216);
 }
 
@@ -69,12 +74,6 @@ li ul li {
     list-style: none;
     font-style: normal;
 }
-
-li ul li:before {
-    content: "\25FC  ";
-    color: rgb(0,149,216);
-}
-
 
 li {
     display: list-item;
